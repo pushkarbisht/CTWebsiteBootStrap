@@ -1,0 +1,137 @@
+* {
+   
+    --bs-nav-pills-link-active-bg: #E78F31;
+    --bs-nav-pills-link-active-color:rgb(31 41 55);
+}
+:root {
+    --primary-color: #E78F31;
+    --secondary-color: rgb(31 41 55);
+    --gradient-text: linear-gradient(to right, #CD4486, #E78F31);
+
+}
+.btn-primary{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    
+}
+.btn-primary:hover{
+    background-color: #EDE0D4;
+    color: black;
+}
+.navbar{
+    background: var(--secondary-color);
+}
+.primary-background{
+    background-color: var(--primary-color) !important;
+}
+.primary-color{
+    color: var(--primary-color) !important;
+}
+.hero-heading{
+    background-image: var(--gradient-text);
+    color: transparent;
+    background-clip: text;
+   
+        line-height: 1;
+        font-weight: 800;
+        font-size: 4rem;
+}
+.place-item-center{
+    place-items: center;
+}
+
+.service-card {
+    background-color: rgb(31 41 55);
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.3);
+}
+
+
+.main-sections {
+    padding: 80px 0; 
+}
+
+.section-heading {
+    background-image: linear-gradient(to right, #CD4486 , #E78F31 );
+    color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 40px; 
+}
+
+.choose-card {
+    background-color: rgb(31, 41, 55);
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 10px; 
+}
+
+.choose-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.hero-background{
+    background-image: url("./../assets/4885192.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100% 100%;
+}
+
+
+.text-primary{
+    color: var(--primary-color) !important;
+}
+
+
+.text-primary-dark {
+    color: #1D3557; /* Dark Blue for Heading */
+}
+
+.text-muted-blue {
+    color: #457B9D; /* Muted Blue for Subtext */
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+.ai-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1D3557; /* Secondary Dark Blue */
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1D3557;
+    margin-bottom: 1.2rem; /* Adds space below heading */
+}
+
+.ai-section h2, .ai-section h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1D3557; /* Secondary Dark Blue */
+}
+
+.ai-section p{
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #343A40;
+    margin-bottom: 1.5rem; /* Adds space below description */
+}
+.ai-section ul li {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #343A40; /* Neutral Dark Gray */
+}
+.ai-section .cta-buttons {
+    margin-top: 1.5rem; /* Pushes buttons away from the text */
+    display: flex;
+    gap: 1rem; /* Adds space between buttons */
+}
