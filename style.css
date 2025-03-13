@@ -135,3 +135,65 @@
     display: flex;
     gap: 1rem; /* Adds space between buttons */
 }
+
+@media (max-width: 768px) {
+   
+    .hero-background {
+        padding: 50px 20px; /* Reduce excessive padding */
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-heading {
+        font-size: 2.5rem; /* Slightly larger for impact */
+        margin-bottom: 15px; /* Reduce gap below heading */
+    }
+    .hero-background p {
+        font-size: 1.2rem; /* Improve readability */
+        max-width: 90%; /* Let text spread more */
+        margin: 0 auto; /* Center text properly */
+    }
+    .d-flex.justify-content-center {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Ensure buttons don’t look too spaced out */
+    }
+}
+
+@media (max-width: 768px) {
+    .ai-section .row {
+        flex-direction: column-reverse; /* Image on top, text below */
+    }
+    .ai-section img {
+        width: 100%; /* Make the image responsive */
+        height: auto;
+    }
+    .ai-section ul {
+        padding-left: 20px; /* Better indentation */
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        padding: 20px; /* Reduce padding for better fit */
+        text-align: center;
+    }
+    .service-card img {
+        width: 60px; /* Adjust icon size */
+        margin-bottom: 8px;
+    }
+    .service-card h4 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer .row {
+        text-align: center;
+    }
+    .footer .col-lg-4 {
+        margin-bottom: 20px;
+    }
+    .footer .social-icons {
+        justify-content: center;
+    }
+}
