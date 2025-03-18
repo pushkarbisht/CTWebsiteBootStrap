@@ -1,363 +1,262 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-   
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="./style.css" rel="stylesheet">
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civentech - Software Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        }
+    
+        // Close mobile menu when clicking a link (only once)
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("#mobile-menu a").forEach(link => {
+                link.addEventListener("click", () => {
+                    document.getElementById("mobile-menu").classList.add("hidden");
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- ✅ Responsive Header -->
+    <header class="bg-blue-900/90 backdrop-blur-lg text-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-5 md:py-4 px-6">
+            
+            <!-- Logo + Company Name -->
+            <a href="#" class="flex items-center space-x-3">
+                <img src="./assets/logo_blue.svg" alt="Civentech Logo" class="h-10">
+                <span class="text-2xl font-bold">Civentech</span>
+            </a>
+    
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#services" class="hover:text-cyan-400">Services</a>
+                <a href="#work" class="hover:text-cyan-400">Our Work</a>
+                <a href="#contact" class="hover:text-cyan-400">Contact</a>
+            </nav>
+    
+            <a href="#contact" class="hidden md:inline bg-cyan-500 px-4 py-2 rounded hover:bg-cyan-400">Get a Quote</a>
+    
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-800 p-4">
+            <a href="#services" class="block py-2 text-white hover:text-cyan-400">Services</a>
+            <a href="#work" class="block py-2 text-white hover:text-cyan-400">Our Work</a>
+            <a href="#contact" class="block py-2 text-white hover:text-cyan-400">Contact</a>
+            <a href="#contact" class="block py-2 mt-2 bg-cyan-500 text-center rounded hover:bg-cyan-400">Get a Quote</a>
+        </div>
+    </header>
+    
 
    
-    <div class="">
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" data-bs-toggle="offcanvas">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
-          </div>
-        <nav class="navbar  navbar-expand-sm " style="">
-            <div class="container">
-                
-                    <a class="navbar-brand" href="#">
-                        <img src="./../assets/logo.svg" alt="Bootstrap"  height="50">
-                      </a>
-              
-               
-              <a class="navbar-toggler collapsed primary-color primary-background" 
-              data-bs-toggle="offcanvas" href="#offcanvasNavbar" role="button" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-                </a>
 
 
-             
-
+  <!-- ✅ Updated Hero Section -->
+<section class="h-auto md:h-[70vh] flex items-center bg-blue-900 text-white px-6 md:px-16">
+    <div class="container mx-auto flex flex-col md:flex-row items-center pt-28 md:pt-0">
         
-              <div class="navbar-collapse collapse justify-content-end" id="navbarsExample03" style="">
-                <ul class="nav  nav-pills  mb-2 mb-sm-0 ">
-                    <li class="nav-item "><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link primary-color ">Features</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link  primary-color">Pricing</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link  primary-color">FAQs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link  primary-color">About</a></li>
-                </ul>
-                
-              </div>
-            </div>
-          </nav>
+        <!-- Left Content -->
+        <div class="md:w-1/2 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                Your Vision, Our Code.
+            </h1>
+            <p class="mt-4 text-lg max-w-lg">
+                We build AI-powered applications, software, and digital solutions to drive innovation and business growth.
+            </p>
+            <a href="#services" class="mt-6 inline-block bg-cyan-500 px-6 py-3 text-lg rounded hover:bg-cyan-400">
+                Explore Services
+            </a>
+        </div>
 
+        <!-- ✅ Right SVG Illustration (Balanced for Mobile & Desktop) -->
+        <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+            <img src="./assets/illus.svg" alt="AI and Software Development Illustration"
+                class="w-60 sm:w-72 md:w-[80%] lg:w-[90%] max-h-72 md:max-h-[26rem] object-contain">
+        </div>
 
-          <!-- <div class="container-fluid py-5 bg-body-tertiary hero-background">
-            <div class="hero-content text-center rounded-3">
-               
-                <img class="d-block mx-auto mb-3" src="./../assets/logo_.svg" alt="Civentech Logo" width="80" height="64">
-        
-             
-                <h1 class="hero-heading fw-bold fs-1">Civentech</h1>
-        
-              
-                <p class="fs-2 text-center text-dark">
-                    Transforming Ideas into Scalable & Smart Software Solutions
-                </p>
-        
-      
-                <p class="fw-normal fs-5 text-muted mx-auto" style="max-width: 750px;">
-                  We architect robust, scalable, and future-ready software solutions that drive business transformation. Our expertise spans across custom applications, enterprise platforms, cloud-native systems, and digital ecosystems, ensuring seamless integration and long-term growth.
-<br>
-With AI-driven intelligence, we enhance decision-making, automate workflows, and design adaptive architectures that evolve with your business needs.
-                </p>
-        
-          
-                <div class="d-flex justify-content-center gap-3 mt-4">
-                    <button class="btn btn-primary btn-lg px-4 rounded-pill" type="button">
-                        Get Started
-                        <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
-                    </button>
-                    <button class="btn btn-outline-primary btn-lg px-4 rounded-pill" type="button">
-                        Learn More
-                    </button>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="container-fluid py-5 bg-body-tertiary hero-background">
-          <div class="text-center rounded-3">
-              <!-- Logo (Company branding) -->
-              <img class="d-block mx-auto" src="./../assets/logo_.svg" alt="Civentech Logo" width="100" height="80">
-      
-              <!-- Main Heading -->
-              <h1 class="hero-heading fw-bold fs-1 d-none d-md-block">
-                 Architecting Scalable & Future-Ready Software
-              </h1>
-              <h1 class="hero-heading fw-bold fs-1 d-md-none d-block">Civentech</h1>
-      
-              <!-- Subheading -->
-              <p class="fs-4 text-muted mx-auto" style="max-width: 750px;">
-                  We design <strong>enterprise-grade architectures</strong> that power 
-                  <strong>custom applications, AI-driven platforms, and digital ecosystems</strong>—ensuring seamless 
-                  <strong>scalability and performance</strong>.
-              </p>
-      
-              <!-- AI Focus (Separated for better emphasis) -->
-              <div class="mt-4">
-                  <h3 class="fw-bold fs-5 text-primary">
-                      <i class="bi bi-lightbulb"></i> AI-Powered Intelligence for Smarter Business
-                  </h3>
-                  <p class="fs-5 text-muted mx-auto" style="max-width: 700px;">
-                      <span>&#128640;</span> Enhance <strong>automation, efficiency, and business operations</strong> 
-                      with AI-driven solutions, built for <strong>adaptability and intelligence</strong>.
-                  </p>
-              </div>
-      
-              <!-- CTA Buttons -->
-              <div class="d-flex justify-content-center gap-3 mt-4">
-                  <button class="btn btn-primary btn-lg px-4 rounded-pill" type="button">
-                      Get Started <i class="bi bi-arrow-right"></i>
-                  </button>
-                  <button class="btn btn-outline-primary btn-lg px-4 rounded-pill" type="button">
-                      Learn More
-                  </button>
-              </div>
-          </div>
-      </div>
-      
-      
-        
-          <!-- <div class="container-fluid py-5 bg-body-tertiary hero-background">
-            <div class="p-5 place-item-center  rounded-3">
-              <img class="d-block mx-auto mb-1" src="./../assets/logo_.svg" alt="" width="72" height="57">
-              <p class="hero-heading">
-                Civentech
-              </p>
-              <p class="fs-2 text-center">
-             
-      
-                Transforming Ideas into Scalable & Smart Software Solutions
-              </p>
-              <p class="fw-normal fs-5">
-                       We understand your business challenges and go beyond just delivering software. We create tailored, scalable, and high-impact digital solutions that drive growth, efficiency, and innovation.
-                With expertise in custom software, app development, and AI-driven enhancements, we ensure your business stays ahead.
-              </p>
-              <div class="d-inline-flex gap-2 mb-5">
-                <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
-                  Call to action
-                  <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
-                </button>
-                <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
-                  Secondary link
-                </button>
-              </div>
-            </div>
-          </div> -->
-
-
-        
-
-        <div class="container col-xxl-10 px-4 py-5 ai-section">
-          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-              <!-- AI Illustration -->
-              <div class="col-10 col-sm-8 col-lg-6">
-                  <img src="./../assets/isometric.jpg" class="d-block mx-lg-auto img-fluid rounded" alt="AI-Powered Solutions" width="700" height="500" loading="lazy">
-              </div>
-      
-              <!-- Content Section -->
-              <div class="col-lg-6">
-                  <h2 class="display-5 fw-bold text-primary-dark lh-1 mb-3">AI-Powered Intelligence for Smarter Business Decisions</h2>
-                  <p class="lead text-muted-blue">
-                      Unlock the potential of <strong>Artificial Intelligence</strong> to drive efficiency, automation, and deep insights. We don’t just implement AI—we strategically integrate it into your <strong>business processes</strong> for <strong>maximum impact</strong>.
-                  </p>
-                  <ul class="list-unstyled fs-5">
-                    <li>🚀 <strong>Predictive Analytics</strong> – Anticipate trends and make data-driven decisions</li>
-                    <li>🤖 <strong>AI Chatbots & Automation</strong> – Enhance customer engagement and support</li>
-                    <li>📊 <strong>Process Optimization</strong> – Improve efficiency and reduce operational costs</li>
-                    <li>🧠 <strong>Custom AI Solutions</strong> – Tailored to your unique business needs</li>
-                </ul>
-                  <div class="d-grid gap-2 d-md-flex justify-content-md-start cta-buttons">
-                      <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Explore AI Solutions</button>
-                      <button type="button" class="btn btn-outline-secondary btn-lg px-4">Get a Free Consultation</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-
-        
-          <!-- <div class="container col-xxl-10 px-4 py-5">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-              <div class="col-10 col-sm-8 col-lg-6">
-                <img src="./../assets/18135.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-              </div>
-              <div class="col-lg-6">
-                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
-                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-                  <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-<!-- Our Services Section -->
-
-<section class="container my-5">
-  <div class="text-center mb-5">
-    <h2 class="fw-bold display-5 primary-color">Our Services</h2>
-    <p class="fs-5 text-muted">Empowering businesses with cutting-edge technology solutions.</p>
-  </div>
-
-  <div class="row g-4">
- 
-    <div class="col-md-4">
-      <div class="card service-card p-4 text-center">
-        <img src="https://cdn-icons-png.flaticon.com/128/4213/4213179.png" alt="Web Development" width="80" class="mb-3 mx-auto d-block">
-        <h4 class="fw-bold primary-color">Web Development</h4>
-        <p class="text-light">We create responsive, high-performance websites and web apps tailored to your needs.</p>
-      </div>
     </div>
-
-
-    <div class="col-md-4">
-      <div class="card service-card p-4 text-center">
-        <img src="https://cdn-icons-png.flaticon.com/128/4144/4144789.png" alt="Cloud Solutions" width="80" class="mb-3 mx-auto d-block">
-        <h4 class="fw-bold primary-color">Cloud Solutions</h4>
-        <p class="text-light">Scalable and secure cloud infrastructure to power your business applications.</p>
-      </div>
-    </div>
-
- 
-    <div class="col-md-4">
-      <div class="card service-card p-4 text-center">
-        <img src="https://cdn-icons-png.flaticon.com/128/4144/4144780.png" alt="AI & Automation" width="80" class="mb-3 mx-auto d-block">
-        <h4 class="fw-bold primary-color">AI & Automation</h4>
-        <p class="text-light">Leverage AI-powered automation to enhance efficiency and business intelligence.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
-<div class="container-fluid px-5 my-5 main-sections bg-body-tertiary">
-  <h2 class="section-heading text-center mb-4">Why Choose Us?</h2>
-  <div class="row text-center">
-      <div class="col-md-4">
-          <div class="choose-card">
-              <img src="https://cdn-icons-png.flaticon.com/128/3502/3502394.png" 
-                   alt="Innovation" width="80" 
-                   class="mb-3 mx-auto d-block">
-              <h4 class="primary-color">Innovation</h4>
-              <p>We embrace cutting-edge technologies to deliver innovative solutions.</p>
-          </div>
-      </div>
-      <div class="col-md-4">
-          <div class="choose-card">
-              <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" 
-                   alt="Expertise" width="80" 
-                   class="mb-3 mx-auto d-block">
-              <h4 class="primary-color">Expertise</h4>
-              <p>Our team consists of industry experts with deep technical knowledge.</p>
-          </div>
-      </div>
-      <div class="col-md-4">
-          <div class="choose-card">
-              <img src="https://cdn-icons-png.flaticon.com/128/1041/1041916.png" 
-                   alt="Reliability" width="80" 
-                   class="mb-3 mx-auto d-block">
-              <h4 class="primary-color">Reliability</h4>
-              <p>We ensure high-quality solutions with timely delivery and support.</p>
-          </div>
-      </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-      </div>
-
-
-
-      <footer class="footer bg-dark text-light py-5">
-        <div class="container">
-            <div class="row">
-                <!-- Company Branding with Logo -->
-                <div class="col-lg-4 mb-4">
-                    <img src="./../assets/logo_.svg" alt="Civentech Logo" width="120" class="mb-2">
-                    <h4 class="fw-bold text-uppercase">Civentech</h4>
-                    <p class="text-muted">Innovating scalable & reliable software solutions.</p>
-                </div>
     
-                <!-- Quick Links -->
-                <div class="col-lg-4 mb-4">
-                    <h5 class="text-uppercase mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light text-decoration-none">Home</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Services</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
-                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
-                    </ul>
-                </div>
+
+
+
+<!-- ✅ Our Services -->
+<section id="services" class="py-24 bg-gray-100 text-center relative">
     
-                <!-- Contact Info -->
-                <div class="col-lg-4 mb-4">
-                    <h5 class="text-uppercase mb-3">Contact Us</h5>
-                    <p><i class="bi bi-envelope"></i> contact@civentech.com</p>
-                    <p><i class="bi bi-geo-alt"></i> Your City, Country</p>
-                    <div>
-                        <a href="#" class="text-light me-3"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
-                    </div>
+    <!-- Decorative Background Shape -->
+    <div class="absolute top-0 left-0 w-full h-60 bg-blue-900/10 rounded-b-[80px]"></div>
+
+    <div class="relative z-10 container mx-auto px-6">
+        
+        <h2 class="text-4xl font-bold text-blue-900 -mt-6">Our Services</h2>
+        <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+            We build innovative digital solutions, AI-powered applications, and scalable business platforms.
+        </p>
+
+        <!-- Services Grid -->
+        <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Service 1 -->
+            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/942/942748.png" alt="Custom Software" class="w-16 h-16 mx-auto">
                 </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">Custom Software Development</h3>
+                <p class="mt-3 text-gray-600">Tailored solutions for businesses of all sizes.</p>
             </div>
-    
-            <hr class="bg-secondary">
-    
-            <!-- Copyright -->
-            <div class="text-center">
-                <p class="mb-0 text-muted">&copy; 2025 Civentech. All Rights Reserved.</p>
+
+            <!-- Service 2 -->
+            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/609/609803.png" alt="Mobile App Development" class="w-16 h-16 mx-auto">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">Mobile App Development</h3>
+                <p class="mt-3 text-gray-600">High-performance apps for iOS & Android.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1040/1040232.png" alt="AI Solutions" class="w-16 h-16 mx-auto">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">AI-Powered Solutions</h3>
+                <p class="mt-3 text-gray-600">GenAI, ML & intelligent automation.</p>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/4974/4974875.png" alt="Admin Dashboard" class="w-16 h-16 mx-auto">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">Admin Panels & Dashboards</h3>
+                <p class="mt-3 text-gray-600">Data-driven, interactive dashboards.</p>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3081/3081559.png" alt="E-Commerce" class="w-16 h-16 mx-auto">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">E-Commerce Development</h3>
+                <p class="mt-3 text-gray-600">Scalable, secure online stores.</p>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3481/3481589.png" alt="SaaS" class="w-16 h-16 mx-auto">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">SaaS & Enterprise Applications</h3>
+                <p class="mt-3 text-gray-600">CRM, CMS & cloud-based solutions.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- ✅ AI Capabilities Section -->
+<section id="ai-capabilities" class="py-20 bg-white">
+    <div class="container mx-auto flex flex-col md:flex-row items-center px-6 md:px-16">
+
+        <!-- Left Side - Content (Wider) -->
+        <div class="md:w-3/5 text-center md:text-left">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900">
+                AI-Powered Innovation
+            </h2>
+            <p class="mt-4 text-gray-700 text-lg">
+                We leverage the latest advancements in 
+                <span class="font-bold">Artificial Intelligence & Machine Learning</span> 
+                to build smart, scalable, and automated solutions for businesses.
+            </p>
+
+            <!-- Bullet Points -->
+            <ul class="mt-6 space-y-3 text-gray-800">
+                <li class="flex items-center">
+                    ✅ <span class="ml-3">Custom AI Model Development</span>
+                </li>
+                <li class="flex items-center">
+                    ✅ <span class="ml-3">Generative AI & Chatbots</span>
+                </li>
+                <li class="flex items-center">
+                    ✅ <span class="ml-3">AI-Powered Analytics & Predictions</span>
+                </li>
+                <li class="flex items-center">
+                    ✅ <span class="ml-3">Computer Vision & NLP</span>
+                </li>
+            </ul>
+
+            <!-- CTA Button -->
+            <a href="#contact" class="mt-6 inline-block bg-cyan-500 px-6 py-3 text-lg rounded hover:bg-cyan-400">
+                Get AI Solutions
+            </a>
+        </div>
+
+        <!-- Right Side - Illustration (Narrower) -->
+        <div class="md:w-2/5 mt-8 md:mt-0 flex justify-center">
+            <img src="./assets/ai.svg" alt="AI Illustration" 
+                class="w-72 md:w-80 lg:w-96 object-contain">
+        </div>
+
+    </div>
+</section>
+
+
+
+
+    <!-- ✅ Contact Us -->
+    <section id="contact" class="py-20 bg-gray-100 text-center">
+        <h2 class="text-3xl font-bold text-blue-900">Contact Us</h2>
+        <form class="mt-10 max-w-lg mx-auto bg-white shadow-md rounded p-6">
+            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border rounded mb-4 focus:border-blue-900">
+            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border rounded mb-4 focus:border-blue-900">
+            <textarea placeholder="Your Message" class="w-full px-4 py-3 border rounded mb-4 focus:border-blue-900"></textarea>
+            <button class="bg-blue-900 text-white px-6 py-3 rounded hover:bg-blue-700">Send Message</button>
+        </form>
+    </section>
+
+    <!-- ✅ Improved Footer -->
+    <footer class="bg-blue-900 text-white py-10 text-center">
+        <div class="container mx-auto grid md:grid-cols-3 gap-8 px-6">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-xl font-bold">Civentech</h3>
+                <p class="mt-2 text-gray-300">Delivering AI-powered software solutions for modern businesses.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold">Quick Links</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="#services" class="hover:text-cyan-400">Services</a></li>
+                    <li><a href="#work" class="hover:text-cyan-400">Our Work</a></li>
+                    <li><a href="#contact" class="hover:text-cyan-400">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-xl font-bold">Follow Us</h3>
+                <div class="mt-2 flex justify-center space-x-4">
+                    <a href="#" class="hover:text-cyan-400">Facebook</a>
+                    <a href="#" class="hover:text-cyan-400">LinkedIn</a>
+                    <a href="#" class="hover:text-cyan-400">Twitter</a>
+                </div>
             </div>
         </div>
+        <p class="mt-6 text-gray-400">&copy; 2025 Civentech. All rights reserved.</p>
     </footer>
-    
 
-    
-
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
