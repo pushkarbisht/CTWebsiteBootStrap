@@ -3,88 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Civentech provides AI-powered software solutions, including custom software, mobile apps, AI solutions, and more.">
+    <meta property="og:title" content="Civentech - AI-Powered Software Solutions">
+    <meta property="og:description" content="We build AI-driven applications and business platforms to drive innovation.">
+    <meta property="og:image" content="./assets/og-image.png">
+    <meta property="og:url" content="https://yourwebsite.com">
     <title>Civentech - Software Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         function toggleMenu() {
-            document.getElementById("mobile-menu").classList.toggle("hidden");
-        }
-    
-        // Close mobile menu when clicking a link (only once)
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll("#mobile-menu a").forEach(link => {
-                link.addEventListener("click", () => {
-                    document.getElementById("mobile-menu").classList.add("hidden");
-                });
-            });
-        });
-    </script>
-</head>
-<body class="bg-gray-100 text-gray-900">
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
 
-    <!-- ✅ Responsive Header -->
+        // Close menu when clicking any link inside
+        document.querySelectorAll("#mobile-menu a").forEach(link => {
+            link.addEventListener("click", () => menu.classList.add("hidden"));
+        });
+    }
+    </script>
+    <style>
+         html {
+        scroll-behavior: smooth;
+    }
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    .typewriter {
+        display: inline-block;
+        white-space: nowrap;  /* Prevents text wrapping */
+        overflow: hidden;
+        animation: typing 3s steps(30, end) forwards;
+    }
+
+    @keyframes vanish {
+        to { opacity: 0; }
+    }
+    @keyframes bg-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    .animated-bg {
+        background: linear-gradient(270deg, #2563eb, #1e40af, #2563eb);
+        background-size: 400% 400%;
+        animation: bg-animation 8s ease infinite;
+    }
+    </style>
+</head>
+<body class="animated-bg text-gray-900">
+
     <header class="bg-blue-900/90 backdrop-blur-lg text-white shadow-md fixed w-full top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center py-5 md:py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
             
             <!-- Logo + Company Name -->
             <a href="#" class="flex items-center space-x-3">
-                <img src="./assets/logo_blue.svg" alt="Civentech Logo" class="h-10">
+                <img src="./assets/logo_blue.svg" alt="Civentech Logo" class="h-10" loading="lazy">
                 <span class="text-2xl font-bold">Civentech</span>
             </a>
     
             <!-- Desktop Menu -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="#services" class="hover:text-cyan-400">Services</a>
-                <a href="#work" class="hover:text-cyan-400">Our Work</a>
-                <a href="#contact" class="hover:text-cyan-400">Contact</a>
+            <nav class="hidden md:flex space-x-10 text-lg">
+                <a href="#services" class="hover:text-cyan-400 transition">Services</a>
+                <a href="#ai-capabilities" class="hover:text-cyan-400 transition">AI Solutions</a>
+                <a href="#why-choose-us" class="hover:text-cyan-400 transition">Why Choose Us</a>
+                <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
             </nav>
     
-            <a href="#contact" class="hidden md:inline bg-cyan-500 px-4 py-2 rounded hover:bg-cyan-400">Get a Quote</a>
+            <a href="#contact" class="hidden md:inline bg-cyan-500 px-5 py-2 rounded-md text-lg hover:bg-cyan-400">
+                Get a Quote
+            </a>
     
             <!-- Mobile Menu Button -->
             <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </div>
     
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-blue-800 p-4">
-            <a href="#services" class="block py-2 text-white hover:text-cyan-400">Services</a>
-            <a href="#work" class="block py-2 text-white hover:text-cyan-400">Our Work</a>
-            <a href="#contact" class="block py-2 text-white hover:text-cyan-400">Contact</a>
-            <a href="#contact" class="block py-2 mt-2 bg-cyan-500 text-center rounded hover:bg-cyan-400">Get a Quote</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-800 p-6 text-lg space-y-4">
+            <a href="#services" class="block py-2 hover:text-cyan-400">Services</a>
+            <a href="#ai-capabilities" class="block py-2 hover:text-cyan-400">AI Solutions</a>
+            <a href="#why-choose-us" class="block py-2 hover:text-cyan-400">Why Choose Us</a>
+            <a href="#contact" class="block py-2 hover:text-cyan-400">Contact</a>
+            <a href="#contact" class="block py-3 bg-cyan-500 text-center rounded-md hover:bg-cyan-400">
+                Get a Quote
+            </a>
         </div>
     </header>
+    
+    
     
 
    
 
 
-  <!-- ✅ Updated Hero Section -->
-<section class="h-auto md:h-[70vh] flex items-center bg-blue-900 text-white px-6 md:px-16">
+<!-- ✅ Hero Section with Blue Gradient Background -->
+<section class="h-auto md:h-[80vh] flex items-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 px-6 md:px-16">
     <div class="container mx-auto flex flex-col md:flex-row items-center pt-28 md:pt-0">
         
         <!-- Left Content -->
-        <div class="md:w-1/2 text-center md:text-left">
-            <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-                Your Vision, Our Code.
+        <div class="md:w-3/5 text-center md:text-left px-4 sm:px-8">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight text-white">
+                <span class="typewriter">Your Vision, Our Code.</span>
             </h1>
-            <p class="mt-4 text-lg max-w-lg">
+            <p class="mt-4 text-lg max-w-lg text-gray-200">
                 We build AI-powered applications, software, and digital solutions to drive innovation and business growth.
             </p>
-            <a href="#services" class="mt-6 inline-block bg-cyan-500 px-6 py-3 text-lg rounded hover:bg-cyan-400">
+            <a href="#services" class="mt-6 inline-block bg-cyan-500 px-6 py-3 text-lg rounded transition duration-300 hover:bg-cyan-400 hover:scale-105">
                 Explore Services
             </a>
         </div>
 
-        <!-- ✅ Right SVG Illustration (Balanced for Mobile & Desktop) -->
-        <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+        <!-- ✅ Right Side (Bigger Illustration) -->
+        <div class="md:w-2/5 mt-8 md:mt-0 flex justify-center">
             <img src="./assets/illus.svg" alt="AI and Software Development Illustration"
-                class="w-60 sm:w-72 md:w-[80%] lg:w-[90%] max-h-72 md:max-h-[26rem] object-contain">
+                class="w-full md:w-[95%] max-h-[32rem] object-contain">
         </div>
-
     </div>
 </section>
 
@@ -92,110 +130,123 @@
 
 
 
-<!-- ✅ Our Services -->
-<section id="services" class="py-24 bg-gray-100 text-center relative">
-    
-    <!-- Decorative Background Shape -->
-    <div class="absolute top-0 left-0 w-full h-60 bg-blue-900/10 rounded-b-[80px]"></div>
 
+
+
+<!-- ✅ Our Services Section -->
+<section id="services" class="py-24 bg-gray-50">
+     <!-- Decorative Background Shape -->
+     <div class="absolute top-0 left-0 w-full h-60 bg-blue-900/10 rounded-b-[80px]"></div>
     <div class="relative z-10 container mx-auto px-6">
         
-        <h2 class="text-4xl font-bold text-blue-900 -mt-6">Our Services</h2>
-        <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
-            We build innovative digital solutions, AI-powered applications, and scalable business platforms.
+        <h2 class="text-4xl font-bold text-center text-blue-900">Our Services</h2>
+        <p class="mt-4 text-lg text-center text-gray-600 max-w-2xl mx-auto">
+            We offer cutting-edge AI solutions, advanced automation, and intelligent applications to supercharge your business.
         </p>
 
-        <!-- Services Grid -->
-        <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- ✅ Services Grid with Modern Cards -->
+        <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             
-            <!-- Service 1 -->
-            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
-                <div class="flex justify-center">
-                    <img src="https://cdn-icons-png.flaticon.com/128/942/942748.png" alt="Custom Software" class="w-16 h-16 mx-auto">
+            <!-- 🔹 Service 1: Custom Software Development -->
+            <div class="relative bg-white p-8 rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute -top-6 left-6 w-16 h-16 flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-700 rounded-full shadow-md">
+                    <img src="./assets/icons/custom_software.png" class="w-10 h-10" alt="Custom Software">
                 </div>
-                <h3 class="mt-6 text-xl font-semibold text-blue-900">Custom Software Development</h3>
-                <p class="mt-3 text-gray-600">Tailored solutions for businesses of all sizes.</p>
+                <h3 class="mt-10 text-xl font-semibold text-blue-900">Custom Software Development</h3>
+                <p class="mt-3 text-gray-600">Scalable, secure, and tailored software solutions built for your business needs.</p>
             </div>
 
-            <!-- Service 2 -->
-            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
-                <div class="flex justify-center">
-                    <img src="https://cdn-icons-png.flaticon.com/128/609/609803.png" alt="Mobile App Development" class="w-16 h-16 mx-auto">
+            <!-- 🔹 Service 2: AI-Powered Applications -->
+            <div class="relative bg-white p-8 rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute -top-6 left-6 w-16 h-16 flex items-center justify-center bg-gradient-to-r from-purple-500 to-purple-700 rounded-full shadow-md">
+                    <img src="./assets/icons/ai_agent.png" class="w-10 h-10" alt="AI-Powered Apps">
                 </div>
-                <h3 class="mt-6 text-xl font-semibold text-blue-900">Mobile App Development</h3>
-                <p class="mt-3 text-gray-600">High-performance apps for iOS & Android.</p>
+                <h3 class="mt-10 text-xl font-semibold text-blue-900">AI-Powered Applications</h3>
+                <p class="mt-3 text-gray-600">Enhance user experiences with AI-driven, smarter applications.</p>
             </div>
 
-            <!-- Service 3 -->
-            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
-                <div class="flex justify-center">
-                    <img src="https://cdn-icons-png.flaticon.com/128/1040/1040232.png" alt="AI Solutions" class="w-16 h-16 mx-auto">
+                <!-- 🔹 Enterprise-Grade SaaS & Multi-Tenant Solutions -->
+<div class="relative bg-white p-8 rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+    <div class="absolute -top-6 left-6 w-16 h-16 flex items-center justify-center bg-gradient-to-r from-indigo-500 to-indigo-700 rounded-full shadow-md">
+        <img src="https://cdn-icons-png.flaticon.com/128/9194/9194247.png" class="w-10 h-10" alt="SaaS Solutions">
+    </div>
+    <h3 class="mt-10 text-xl font-semibold text-blue-900">Enterprise-Grade SaaS & Multi-Tenant Solutions</h3>
+    <p class="mt-3 text-gray-600">Build scalable, secure, and high-performance SaaS applications with multi-tenant architecture.</p>
+</div>
+
+
+            <!-- 🔹 Service 4: Mobile App Development -->
+            <div class="relative bg-white p-8 rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute -top-6 left-6 w-16 h-16 flex items-center justify-center bg-gradient-to-r from-green-500 to-green-700 rounded-full shadow-md">
+                    <img src="./assets/icons/mobile_apps.png" class="w-10 h-10" alt="Mobile Apps">
                 </div>
-                <h3 class="mt-6 text-xl font-semibold text-blue-900">AI-Powered Solutions</h3>
-                <p class="mt-3 text-gray-600">GenAI, ML & intelligent automation.</p>
+                <h3 class="mt-10 text-xl font-semibold text-blue-900">Mobile App Development</h3>
+                <p class="mt-3 text-gray-600">Innovative mobile apps for iOS & Android, built for performance & scalability.</p>
             </div>
 
-            <!-- Service 4 -->
-            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
-                <div class="flex justify-center">
-                    <img src="https://cdn-icons-png.flaticon.com/128/4974/4974875.png" alt="Admin Dashboard" class="w-16 h-16 mx-auto">
+            <!-- 🔹 Service 5: Real-Time Applications -->
+            <div class="relative bg-white p-8 rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute -top-6 left-6 w-16 h-16 flex items-center justify-center bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-full shadow-md">
+                    <img src="./assets/icons/real_time.png" class="w-10 h-10" alt="Real-Time Apps">
                 </div>
-                <h3 class="mt-6 text-xl font-semibold text-blue-900">Admin Panels & Dashboards</h3>
-                <p class="mt-3 text-gray-600">Data-driven, interactive dashboards.</p>
+                <h3 class="mt-10 text-xl font-semibold text-blue-900">Real-Time Applications</h3>
+                <p class="mt-3 text-gray-600">High-performance real-time solutions for messaging, analytics & live tracking.</p>
             </div>
 
-            <!-- Service 5 -->
-            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
-                <div class="flex justify-center">
-                    <img src="https://cdn-icons-png.flaticon.com/128/3081/3081559.png" alt="E-Commerce" class="w-16 h-16 mx-auto">
+            <!-- 🔹 Service 6: Dashboards & Data Analytics -->
+            <div class="relative bg-white p-8 rounded-xl shadow-lg transition duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute -top-6 left-6 w-16 h-16 flex items-center justify-center bg-gradient-to-r from-teal-500 to-teal-700 rounded-full shadow-md">
+                    <img src="./assets/icons/dashboard.png" class="w-10 h-10" alt="Data Dashboards">
                 </div>
-                <h3 class="mt-6 text-xl font-semibold text-blue-900">E-Commerce Development</h3>
-                <p class="mt-3 text-gray-600">Scalable, secure online stores.</p>
-            </div>
-
-            <!-- Service 6 -->
-            <div class="p-8 bg-white shadow-lg rounded-lg transition-transform transform hover:-translate-y-2">
-                <div class="flex justify-center">
-                    <img src="https://cdn-icons-png.flaticon.com/128/3481/3481589.png" alt="SaaS" class="w-16 h-16 mx-auto">
-                </div>
-                <h3 class="mt-6 text-xl font-semibold text-blue-900">SaaS & Enterprise Applications</h3>
-                <p class="mt-3 text-gray-600">CRM, CMS & cloud-based solutions.</p>
+                <h3 class="mt-10 text-xl font-semibold text-blue-900">Dashboards & Data Analytics</h3>
+                <p class="mt-3 text-gray-600">Custom dashboards & analytics to visualize business performance in real time.</p>
             </div>
 
         </div>
-
     </div>
 </section>
+
+
+
+
+
+
 <!-- ✅ AI Capabilities Section -->
 <section id="ai-capabilities" class="py-20 bg-white">
     <div class="container mx-auto flex flex-col md:flex-row items-center px-6 md:px-16">
 
         <!-- Left Side - Content (Wider) -->
-        <div class="md:w-3/5 text-center md:text-left">
+        <div class="md:w-3/4 text-center md:text-left">
             <h2 class="text-3xl md:text-4xl font-bold text-blue-900">
                 AI-Powered Innovation
             </h2>
             <p class="mt-4 text-gray-700 text-lg">
-                We leverage the latest advancements in 
-                <span class="font-bold">Artificial Intelligence & Machine Learning</span> 
-                to build smart, scalable, and automated solutions for businesses.
+                Unlock the full potential of AI with cutting-edge solutions that enhance productivity, decision-making, and automation.
             </p>
 
-            <!-- Bullet Points -->
-            <ul class="mt-6 space-y-3 text-gray-800">
-                <li class="flex items-center">
-                    ✅ <span class="ml-3">Custom AI Model Development</span>
+            <ul class="mt-6 space-y-4 text-gray-800">
+                <li class="flex items-start">
+                    <span class="text-xl">💡</span>
+                    <span class="ml-3"><strong>AI Agents for Productivity:</strong> Automate workflows, optimize processes, and boost efficiency with intelligent AI agents.</span>
                 </li>
-                <li class="flex items-center">
-                    ✅ <span class="ml-3">Generative AI & Chatbots</span>
+                <li class="flex items-start">
+                    <span class="text-xl">🤖</span>
+                    <span class="ml-3"><strong>AI-Powered Smarter Applications:</strong> Transform your apps with AI-driven insights, automation, and adaptive intelligence.</span>
                 </li>
-                <li class="flex items-center">
-                    ✅ <span class="ml-3">AI-Powered Analytics & Predictions</span>
+                <li class="flex items-start">
+                    <span class="text-xl">🔗</span>
+                    <span class="ml-3"><strong>Multi-Agentic AI Systems:</strong> Deploy multiple AI agents working collaboratively to handle complex tasks and decision-making.</span>
                 </li>
-                <li class="flex items-center">
-                    ✅ <span class="ml-3">Computer Vision & NLP</span>
+                <li class="flex items-start">
+                    <span class="text-xl">📊</span>
+                    <span class="ml-3"><strong>Retrieval-Augmented Generation (RAG):</strong> Leverage RAG-powered AI for more context-aware, accurate, and insightful responses.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-xl">⚡</span>
+                    <span class="ml-3"><strong>Custom AI Tools:</strong> Tailor-made AI solutions designed to meet your specific business needs and challenges.</span>
                 </li>
             </ul>
+            
 
             <!-- CTA Button -->
             <a href="#contact" class="mt-6 inline-block bg-cyan-500 px-6 py-3 text-lg rounded hover:bg-cyan-400">
@@ -203,10 +254,10 @@
             </a>
         </div>
 
-        <!-- Right Side - Illustration (Narrower) -->
+        <!-- Right Side - Bigger Illustration (Full Width) -->
         <div class="md:w-2/5 mt-8 md:mt-0 flex justify-center">
             <img src="./assets/ai.svg" alt="AI Illustration" 
-                class="w-72 md:w-80 lg:w-96 object-contain">
+                class="w-full max-w-[600px] object-contain" loading="lazy">
         </div>
 
     </div>
@@ -215,14 +266,89 @@
 
 
 
+<!-- ✅ Why Choose Us Section -->
+<section id="why-choose-us" class="py-20 bg-white text-center">
+    <div class="container mx-auto px-6 md:px-16">
+
+        <!-- Section Heading -->
+        <h2 class="text-4xl font-bold text-blue-900">Why Choose Us?</h2>
+        <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+            We combine innovation, expertise, and AI-driven solutions to help businesses grow efficiently.
+        </p>
+
+        <!-- Feature Grid -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            
+            <!-- Feature 1 -->
+            <div class="p-8 bg-gray-100 shadow-md rounded-lg transition-transform duration-300 hover:scale-105">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" alt="Experience" class="w-16 h-16">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">Expert Team</h3>
+                <p class="mt-3 text-gray-600">A team of experienced developers, AI specialists, and designers.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="p-8 bg-gray-100 shadow-md rounded-lg transition-transform duration-300 hover:scale-105">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1176/1176858.png" alt="AI-Powered" class="w-16 h-16">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">AI-Driven Solutions</h3>
+                <p class="mt-3 text-gray-600">We integrate AI & ML to deliver smart, automated solutions.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="p-8 bg-gray-100 shadow-md rounded-lg transition-transform duration-300 hover:scale-105">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1904/1904425.png" alt="Customer Satisfaction" class="w-16 h-16">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">Customer-Centric</h3>
+                <p class="mt-3 text-gray-600">We prioritize client satisfaction with tailored, scalable solutions.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="p-8 bg-gray-100 shadow-md rounded-lg transition-transform duration-300 hover:scale-105">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2523/2523550.png" alt="Scalability" class="w-16 h-16">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">Scalability</h3>
+                <p class="mt-3 text-gray-600">We build solutions that grow with your business.</p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="p-8 bg-gray-100 shadow-md rounded-lg transition-transform duration-300 hover:scale-105">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/929/929564.png" alt="Support" class="w-16 h-16">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">24/7 Support</h3>
+                <p class="mt-3 text-gray-600">Reliable customer support whenever you need assistance.</p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="p-8 bg-gray-100 shadow-md rounded-lg transition-transform duration-300 hover:scale-105">
+                <div class="flex justify-center">
+                    <img src="https://cdn-icons-png.flaticon.com/128/684/684809.png" alt="Security" class="w-16 h-16">
+                </div>
+                <h3 class="mt-6 text-xl font-semibold text-blue-900">Security First</h3>
+                <p class="mt-3 text-gray-600">We ensure enterprise-grade security in all our solutions.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
     <!-- ✅ Contact Us -->
     <section id="contact" class="py-20 bg-gray-100 text-center">
         <h2 class="text-3xl font-bold text-blue-900">Contact Us</h2>
         <form class="mt-10 max-w-lg mx-auto bg-white shadow-md rounded p-6">
-            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border rounded mb-4 focus:border-blue-900">
+            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border rounded mb-4 focus:border-blue-900 focus:ring-2 focus:ring-blue-500">
             <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border rounded mb-4 focus:border-blue-900">
             <textarea placeholder="Your Message" class="w-full px-4 py-3 border rounded mb-4 focus:border-blue-900"></textarea>
-            <button class="bg-blue-900 text-white px-6 py-3 rounded hover:bg-blue-700">Send Message</button>
+            <button class="bg-blue-900 text-white px-6 py-3 rounded transition duration-300 hover:bg-blue-700 hover:scale-105">
+                Send Message
+            </button>
         </form>
     </section>
 
