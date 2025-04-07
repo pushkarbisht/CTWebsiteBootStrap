@@ -67,7 +67,7 @@ try {
     $mail->addAddress($adminEmail1);
     $mail->addAddress($adminEmail2);
     
-    $mail->Subject = "New Contact Form Submission - Civentech";
+    $mail->Subject = "New Lead from {$name} - Civentech";
     $mail->isHTML(true);
     $mail->Body = "
         <div style='font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; text-align: center;'>
