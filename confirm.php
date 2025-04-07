@@ -80,7 +80,7 @@ try {
                 <p><strong>Message:</strong></p>
                 <p style='background: #f9f9f9; padding: 15px; border-radius: 5px; font-size: 14px;'>{$message}</p>
                 <hr style='border: 0.5px solid #ddd; margin: 20px 0;'>
-                <p style='color: #888; font-size: 12px;'>Civentech; Your Vision, Our Code.</p>
+                <p style='color: #888; font-size: 12px;'>Civentech : Imagine. Build. Scale.</p>
             </div>
         </div>
     ";
@@ -99,7 +99,7 @@ try {
                 <p style='color: #555; font-size: 14px;'>Thank you for verifying your email. Our team has received your inquiry, and we will get back to you soon.</p>
                 <p style='color: #777; font-size: 12px; margin-top: 20px;'>If you have any further queries, feel free to reply to this email.</p>
                 <hr style='border: 0.5px solid #ddd; margin: 20px 0;'>
-                <p style='color: #888; font-size: 12px;'>Civentech; Your Vision, Our Code.</p>
+                <p style='color: #888; font-size: 12px;'>Civentech : Imagine. Build. Scale.</p>
             </div>
         </div>
     ";
