@@ -1,0 +1,35 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typewriter {
+    display: inline-block;
+    line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(30, end) forwards;
+}
+
+@keyframes vanish {
+    to { opacity: 0; }
+}
+
+@keyframes bg-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animated-bg {
+    background: linear-gradient(270deg, #2563eb, #1e40af, #2563eb);
+    background-size: 400% 400%;
+    animation: bg-animation 8s ease infinite;
+}

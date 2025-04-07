@@ -29,13 +29,15 @@ if (!hash_equals($calculatedSignature, $providedSignature)) {
 $decodedData = json_decode(base64_decode($encodedData), true);
 
 // Step 4: Validate decoded data
-if (!isset($decodedData['name']) || !isset($decodedData['email']) || !isset($decodedData['message']) || !isset($decodedData['expires_at'])) {
+if (!isset($decodedData['name']) || !isset($decodedData['email']) || !isset($decodedData['message']) || !isset($decodedData['expires_at']) || !isset($decodedData['phone'])) {
     echo renderResponse("Invalid Request", "The link is incomplete or tampered with. Please try again.", false);
     exit;
 }
 
 $name = htmlspecialchars($decodedData['name']);
 $email = htmlspecialchars($decodedData['email']);
+$phone = htmlspecialchars($decodedData['phone']);
+$company = htmlspecialchars($decodedData['company']);
 $message = nl2br(htmlspecialchars($decodedData['message']));
 $expiresAt = $decodedData['expires_at'];
 
@@ -73,6 +75,8 @@ try {
                 <h2 style='color: #2563eb;'>New Contact Form Submission</h2>
                 <p><strong>Name:</strong> {$name}</p>
                 <p><strong>Email:</strong> {$email}</p>
+                <p><strong>Phone:</strong> {$phone}</p>
+                <p><strong>Phone:</strong> {$company}</p>
                 <p><strong>Message:</strong></p>
                 <p style='background: #f9f9f9; padding: 15px; border-radius: 5px; font-size: 14px;'>{$message}</p>
                 <hr style='border: 0.5px solid #ddd; margin: 20px 0;'>

@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // Capture and sanitize input
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+$phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+$company = filter_input(INPUT_POST, 'company', FILTER_SANITIZE_STRING);
 $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
 
 if (!$name || !$email || !$message) {
@@ -29,12 +31,19 @@ $encodedData = base64_encode(json_encode([
     "name" => $name,
     "email" => $email,
     "message" => $message,
+    "phone" => $phone,
+    "company"=>$company,
     "expires_at" => $expiryTime
 ]));
 $signature = hash_hmac('sha256', $encodedData, $secretKey); // Generate a secure signature
 
-$confirmUrl = "https://dev2.civentech.com/confirm.php?data=" . rawurlencode($encodedData) . "&signature=" . rawurlencode($signature);
+// $confirmUrl = "https://dev2.civentech.com/confirm.php?data=" . rawurlencode($encodedData) . "&signature=" . rawurlencode($signature);
 // $confirmUrl = "https://dev.civentech.com.com/confirm.php?data=" . $encodedData;
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+$host = $_SERVER['HTTP_HOST'];
+$baseUrl = $protocol . "://" . $host;
+
+$confirmUrl = $baseUrl . "/confirm.php?data=" . rawurlencode($encodedData) . "&signature=" . rawurlencode($signature);
 
 // Email configuration
 
@@ -77,7 +86,7 @@ try {
                 If you did not request this verification, please ignore this email.
             </p>
             <hr style='border: 0.5px solid #ddd; margin: 20px 0;'>
-            <p style='color: #888; font-size: 12px;'>Civentech; Your Vision, Our Code.</p>
+            <p style='color: #888; font-size: 12px;'>Civentech : Imagine. Build. Scale.</p>
         </div>
     </div>
 ";
