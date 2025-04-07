@@ -43,7 +43,7 @@ $(document).ready(function () {
         // AJAX request
         $.ajax({
             type: "POST",
-            url: "bootstrap/process.php", // Update if needed
+            url: "process.php", // Update if needed
             data: { name: name, email: email, phone: phone, message: message, company:company },
             dataType: "json",
             success: function (response) {
@@ -80,7 +80,7 @@ $(document).ready(function () {
             showResponseMessage("Invalid phone number format. Please enter a valid number.", "error");
             return false;
         }
-        if (message.length < 100 || message.length > 1000) {
+        if (message.length < 10 || message.length > 1000) {
             showResponseMessage("Message must be at least 10 characters long and maximum 1000 characters long.", "error");
             return false;
         }

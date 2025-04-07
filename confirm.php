@@ -93,7 +93,7 @@ try {
     $mail->Body = "
         <div style='font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; text-align: center;'>
             <div style='max-width: 600px; background: #ffffff; padding: 20px; border-radius: 8px; margin: auto;'>
-                <img src='https://dev2.civentech.com/assets/logo_blue.png' alt='Civentech Logo' style='max-width: 150px; margin-bottom: 20px;'>
+                <img src='https://civentech.com/assets/logo_blue.png' alt='Civentech Logo' style='max-width: 150px; margin-bottom: 20px;'>
                 <h2 style='color: #2563eb;'>Email Verification Completed</h2>
                 <p style='color: #333; font-size: 16px;'>Dear <strong>{$name}</strong>,</p>
                 <p style='color: #555; font-size: 14px;'>Thank you for verifying your email. Our team has received your inquiry, and we will get back to you soon.</p>
@@ -127,10 +127,10 @@ function renderResponse($title, $message, $success) {
     </head>
     <body>
         <div class='container'>
-            <img src='https://dev2.civentech.com/assets/logo_blue.png' alt='Civentech Logo' style='max-width: 120px; margin-bottom: 20px;'>
+            <img src='https://civentech.com/assets/logo_blue.png' alt='Civentech Logo' style='max-width: 120px; margin-bottom: 20px;'>
             <h2>{$title}</h2>
             <p>{$message}</p>
-            <a href='https://dev2.civentech.com/#contact' class='btn'>Go Back to Contact Page</a>
+            <a href='https://civentech.com/#contact' class='btn'>Go Back to Contact Page</a>
         </div>
     </body>
     </html>";
