@@ -19,8 +19,29 @@ $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
 $company = filter_input(INPUT_POST, 'company', FILTER_SANITIZE_STRING);
 $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
 
-if (!$name || !$email || !$message) {
-    die(json_encode(["status" => "error", "message" => "Invalid input provided"]));
+// Validate name (3–50 chars)
+if (!$name || strlen($name) < 3 || strlen($name) > 50) {
+    die(json_encode(["status" => "error", "message" => "Name must be between 3 and 50 characters."]));
+}
+
+// Validate email format
+if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    die(json_encode(["status" => "error", "message" => "Invalid email address."]));
+}
+
+// Validate phone (digits only, 10–15 length)
+if ($phone && !preg_match('/^[0-9]{10,15}$/', $phone)) {
+    die(json_encode(["status" => "error", "message" => "Invalid phone number format."]));
+}
+
+// Validate message (10–1000 chars)
+if (!$message || strlen($message) < 10 || strlen($message) > 1000) {
+    die(json_encode(["status" => "error", "message" => "Message must be between 10 and 1000 characters."]));
+}
+
+// Optional company name length check
+if ($company && strlen($company) > 100) {
+    die(json_encode(["status" => "error", "message" => "Company name too long (max 100 characters)."]));
 }
 
 $expiryTime = time() + (24 * 60 * 60); // 24 hours from now
